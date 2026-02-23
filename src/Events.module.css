@@ -1,0 +1,61 @@
+/* Premium Dark Mode Container */
+.stageContainer {
+  @apply bg-[#0A0E13] py-32 px-4 relative overflow-hidden;
+}
+
+/* Section Header */
+.header {
+  @apply text-center mb-24 relative z-10;
+}
+
+.title {
+  @apply font-heading text-6xl md:text-8xl text-white mb-6 tracking-tight drop-shadow-[0_0_30px_#38bdf84d];
+}
+
+.subtitle {
+  @apply font-body text-morning-mist/80 text-lg md:text-xl max-w-2xl mx-auto;
+}
+
+/* The Grid of Performers */
+.performersGrid {
+  @apply max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 auto-rows-[350px] gap-6 relative z-10;
+}
+
+/* Individual Artist Card - Dark Glass */
+.card {
+  @apply relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 text-white shadow-2xl transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_10px_40px_#38bdf833] hover:border-white/20;
+}
+
+.cardImage {
+  @apply absolute top-0 left-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-100;
+}
+
+.cardContent {
+  @apply absolute bottom-0 left-0 right-0 p-8 pt-48 bg-gradient-to-t from-[#0A0E13] via-[#0A0E13]/80 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-500 z-10 flex flex-col justify-end;
+}
+
+.artistName {
+  @apply font-heading text-white mb-2 group-hover:text-alpine-blue transition-colors tracking-wide drop-shadow-md;
+}
+
+.artistTag {
+  @apply absolute top-6 left-6 z-20 flex gap-2;
+}
+
+.date {
+  @apply text-morning-mist/70 text-sm flex items-center gap-2 opacity-80 group-hover:opacity-100 transition-opacity duration-500;
+}
+
+/* "Pitch Yourself" CTA Box */
+.ctaContainer {
+  @apply mt-32 text-center bg-white/5 backdrop-blur-2xl border border-alpine-blue/30 text-white shadow-xl rounded-3xl p-16 max-w-5xl mx-auto relative overflow-hidden shadow-[0_0_50px_#38bdf81a];
+}
+
+.ctaButton {
+  @apply mt-8 bg-alpine-blue hover:bg-white text-[#0A0E13] hover:text-alpine-blue px-12 py-5 rounded-full font-heading text-xl tracking-widest uppercase transition-all inline-flex items-center gap-4 shadow-[0_4px_20px_#38bdf866] hover:shadow-[0_4px_30px_#ffffff99] hover:scale-105 relative z-10;
+}
+
+/* Ambient Background Glow */
+.glow {
+  @apply absolute top-1/4 left-1/2 -translate-x-1/2 w-[1000px] h-[800px] bg-alpine-blue/15 blur-[150px] rounded-full pointer-events-none mix-blend-screen;
+}

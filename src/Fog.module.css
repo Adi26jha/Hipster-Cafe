@@ -1,0 +1,38 @@
+.fogWrapper {
+  @apply absolute bottom-0 left-0 w-full h-full overflow-hidden z-20 pointer-events-none opacity-80;
+}
+
+/* Base Fog Layer */
+.fogLayer {
+  @apply absolute bottom-0 left-0 w-[200%] h-full;
+  background-image: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog1.png');
+  background-size: cover;
+  background-repeat: repeat-x;
+  background-position: center bottom;
+}
+
+/* Layer 1: Slow and distinct */
+.layer1 {
+  animation: fogDrift 60s linear infinite;
+  opacity: 0.5;
+}
+
+/* Layer 2: Faster and subtle (creates depth) */
+.layer2 {
+  animation: fogDrift 40s linear infinite;
+  opacity: 0.3;
+  transform: scale(1.2); /* Make it look closer */
+  animation-delay: -5s;
+}
+
+@keyframes fogDrift {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); } /* Moves half its width */
+}
+
+/* Fade out at the top so it blends */
+.fogFade {
+  @apply absolute inset-0;
+  background: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.8) 100%); 
+  /* This actually darkens the top to focus eyes on the bottom fog */
+}

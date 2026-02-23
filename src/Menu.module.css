@@ -1,0 +1,61 @@
+/* Container */
+.menuContainer {
+  @apply py-24 px-4 bg-primary-brown text-primary-cream relative;
+}
+
+/* Header */
+.header {
+  @apply text-center mb-16;
+}
+
+.title {
+  @apply font-heading text-6xl text-accent-gold mb-4;
+}
+
+.subtitle {
+  @apply font-body text-gray-300 text-lg max-w-2xl mx-auto;
+}
+
+/* Category Filters (Tabs) */
+.filterBar {
+  @apply flex justify-center gap-6 mb-12;
+}
+
+.filterBtn {
+  @apply text-lg font-heading tracking-widest uppercase pb-2 border-b-2 border-transparent text-gray-500 hover:text-accent-gold transition-all;
+}
+
+.activeFilter {
+  @apply text-accent-gold border-accent-gold;
+}
+
+/* The Menu Grid */
+.menuGrid {
+  @apply max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8;
+}
+
+/* Individual Menu Item */
+.itemCard {
+  @apply flex justify-between items-start border-b border-primary-cream/10 pb-6 hover:bg-white/5 p-4 rounded-lg transition-colors cursor-default;
+}
+
+.itemInfo {
+  @apply flex-1 pr-4;
+}
+
+.itemName {
+  @apply font-heading text-2xl mb-1 text-primary-cream;
+}
+
+.itemDesc {
+  @apply font-body text-sm text-gray-500 italic;
+}
+
+.itemPrice {
+  @apply font-heading text-xl text-accent-rust;
+}
+
+/* "Staff Pick" Badge */
+.badge {
+  @apply inline-block bg-accent-gold text-primary-brown text-[10px] font-bold px-2 py-0.5 rounded ml-3 align-middle;
+}

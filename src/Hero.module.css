@@ -1,0 +1,52 @@
+/* src/Hero.module.css */
+.heroContainer {
+  @apply relative h-screen w-full overflow-hidden flex items-center justify-center bg-primary-brown;
+}
+
+.bgWrapper {
+  @apply absolute inset-0 z-0;
+}
+
+.overlay {
+  @apply absolute inset-0 bg-primary-cream/60 z-10;
+}
+
+.bgImage {
+  @apply w-full h-full object-cover;
+}
+
+.content {
+  @apply relative z-20 text-center px-4 max-w-5xl mx-auto text-primary-cream;
+}
+
+.badge {
+  @apply inline-flex items-center gap-2 bg-accent-rust/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase mb-6 shadow-lg;
+}
+
+.heading {
+  @apply font-heading text-6xl md:text-8xl lg:text-9xl mb-4 tracking-wider drop-shadow-lg;
+}
+
+.subtitle {
+  @apply font-body text-lg md:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto font-light;
+}
+
+.buttonGroup {
+  @apply flex flex-col md:flex-row gap-5 justify-center items-center;
+}
+
+.btnPrimary {
+  @apply bg-primary-orange text-primary-brown px-8 py-4 rounded-lg font-bold tracking-widest transition-all transform hover:scale-105 flex items-center gap-3 shadow-xl hover:bg-orange-700;
+}
+
+.btnOutline {
+  @apply border-2 border-primary-cream/50 text-primary-cream px-8 py-4 rounded-lg font-bold tracking-widest transition-all flex items-center gap-3 hover:border-primary-cream hover:bg-primary-cream hover:text-primary-brown;
+}
+
+.scrollIndicator {
+  @apply absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-gray-500;
+}
+
+.scrollLine {
+  @apply w-[2px] h-16 bg-gradient-to-b from-accent-gold to-transparent animate-pulse;
+}

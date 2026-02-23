@@ -1,0 +1,63 @@
+/* Import the exact font stack specified */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&family=Caveat:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* GLOBAL RESET - BASELINE VISIBILITY */
+body {
+  @apply bg-morning-mist text-morning-slate antialiased overflow-x-hidden selection:bg-sunrise-gold/30 selection:text-morning-slate;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Ensures the default hand pointer doesn't appear on links/buttons */
+a,
+button,
+input,
+textarea,
+select,
+.clickable {
+  cursor: none;
+}
+
+/* --- UI ENHANCEMENTS 2026 --- */
+
+/* Custom Scrollbar - Ultra Slim & Minimal */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-morning-mist;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-morning-slate/20 rounded-full transition-all duration-300;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-sunrise-gold/80;
+}
+
+/* Text Selection - Morning Sunrise */
+::selection {
+  @apply bg-sunrise-gold/40 text-morning-slate;
+}
+
+/* Glassmorphism 2.0 Utilities */
+@layer components {
+
+  /* Transitioning base down to light for morning effect */
+  .glass-panel-dark {
+    @apply bg-white/60 backdrop-blur-2xl border border-white/60 shadow-xl text-morning-slate rounded-3xl overflow-hidden;
+  }
+
+  .glass-panel-light {
+    @apply bg-white/70 backdrop-blur-xl border border-white shadow-xl text-morning-slate rounded-2xl;
+  }
+}

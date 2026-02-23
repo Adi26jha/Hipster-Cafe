@@ -1,0 +1,58 @@
+/* src/Timeline.module.css */
+
+/* Container for the timeline section */
+.sectionContainer {
+  @apply py-20 px-4 relative overflow-hidden bg-primary-cream;
+}
+
+/* The vertical dashed line */
+.centerLine {
+  @apply absolute left-4 md:left-1/2 top-0 bottom-0 w-1 border-l-2 border-dashed border-accent-gold/50 h-full;
+}
+
+/* Container for each story item */
+.itemContainer {
+  @apply relative z-10 flex flex-col md:flex-row items-center justify-between w-full max-w-6xl mx-auto mb-24 last:mb-0;
+}
+
+/* Right-aligned items (even numbers) */
+.itemContainerRight {
+  @apply md:flex-row-reverse;
+}
+
+/* THE FIX: A perfect circle centered on the line */
+.marker {
+  @apply absolute 
+  /* Mobile Position: Left aligned */
+  left-4 
+  /* Desktop Position: Dead Center */
+  md:left-1/2 
+  /* Center the circle itself */
+  transform -translate-x-1/2 
+  /* Size & Shape */
+  w-20 h-20 rounded-full 
+  /* Colors: Rust background, White text */
+  bg-accent-rust text-white border-4 border-primary-cream shadow-xl z-20
+  /* Flexbox to center the Year text */
+  flex items-center justify-center 
+  /* Typography */
+  font-heading font-bold text-xl tracking-wider;
+}
+
+/* The Content Card */
+.card {
+  /* Added margin-left on mobile so it doesn't overlap the marker */
+  @apply w-full md:w-[45%] bg-white p-6 md:p-8 rounded-lg shadow-lg border-t-4 border-accent-gold hover:shadow-2xl transition-shadow relative ml-16 md:ml-0;
+}
+
+.cardImage {
+  @apply w-full h-48 object-cover rounded mb-4 hover:opacity-90 transition-all;
+}
+
+.cardTitle {
+  @apply font-heading text-3xl text-primary-brown mb-2;
+}
+
+.cardText {
+  @apply font-body text-gray-600 leading-relaxed;
+}

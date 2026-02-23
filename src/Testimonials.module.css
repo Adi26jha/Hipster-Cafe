@@ -1,0 +1,54 @@
+/* Dark "Wood" Background */
+.sectionContainer {
+  @apply py-24 px-4 bg-primary-brown relative overflow-hidden;
+}
+
+/* Header */
+.header {
+  @apply text-center mb-16 relative z-10;
+}
+
+.title {
+  @apply font-heading text-5xl md:text-6xl text-primary-cream mb-4;
+}
+
+.subtitle {
+  @apply font-body text-accent-gold text-lg max-w-2xl mx-auto tracking-wide;
+}
+
+/* The Grid of Notes */
+.testimonialsGrid {
+  @apply max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8;
+}
+
+/* Individual Note Card (Paper Look) */
+.noteCard {
+  @apply bg-primary-cream p-8 shadow-2xl transition-transform duration-300 hover:scale-105 hover:shadow-accent-gold/20 relative;
+}
+
+/* Pin Graphic at the top */
+.pin {
+  @apply absolute -top-3 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-accent-rust shadow-md border-2 border-black/20;
+}
+
+/* The Quote Text */
+.quote {
+  @apply font-handwritten text-2xl text-primary-brown mb-6 leading-relaxed;
+}
+
+/* The Author Info */
+.author {
+  @apply flex items-center gap-3 border-t border-primary-brown/10 pt-4;
+}
+
+.avatar {
+  @apply w-10 h-10 rounded-full object-cover grayscale;
+}
+
+.name {
+  @apply font-heading text-lg text-secondary-charcoal;
+}
+
+.role {
+  @apply text-xs text-accent-rust font-bold uppercase tracking-wider;
+}

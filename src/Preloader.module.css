@@ -1,0 +1,27 @@
+/* Full Screen Overlay */
+.loaderContainer {
+  @apply fixed inset-0 z-[100] bg-secondary-charcoal flex flex-col items-center justify-center text-primary-cream;
+}
+
+/* Compass Container */
+.compassWrapper {
+  @apply mb-6 text-accent-rust;
+}
+
+/* Text Styling */
+.text {
+  @apply font-heading text-4xl tracking-widest uppercase mb-2;
+}
+
+.subtext {
+  @apply font-body text-xs text-gray-500 tracking-[0.3em];
+}
+
+/* Progress Bar */
+.progressContainer {
+  @apply w-48 h-[2px] bg-gray-800 rounded-full mt-8 overflow-hidden relative;
+}
+
+.progressBar {
+  @apply h-full bg-accent-gold absolute left-0 top-0;
+}

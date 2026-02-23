@@ -1,0 +1,12 @@
+.cursor {
+  @apply fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[999] hidden md:block;
+  background-color: white;
+  mix-blend-mode: difference; /* This makes it invert colors! */
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out; /* Smooth follow */
+}
+
+/* When clicking */
+.clicking {
+  transform: translate(-50%, -50%) scale(0.8);
+}

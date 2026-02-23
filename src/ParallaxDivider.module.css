@@ -1,0 +1,21 @@
+/* The Window (Container) */
+.container {
+  @apply w-full h-[60vh] relative overflow-hidden flex items-center justify-center;
+}
+
+/* The Moving Image */
+.image {
+  @apply absolute inset-0 w-full h-[120%] object-cover;
+  /* Start slightly higher so we can move it down */
+  top: -10%; 
+}
+
+/* Dark Overlay for Text Readability */
+.overlay {
+  @apply absolute inset-0 bg-black/30;
+}
+
+/* Optional Center Text */
+.text {
+  @apply relative z-10 font-heading text-5xl md:text-7xl text-white tracking-[0.2em] uppercase text-center opacity-90 drop-shadow-lg;
+}

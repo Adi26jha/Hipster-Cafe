@@ -1,0 +1,56 @@
+/* The Nav Bar Container */
+.nav {
+  @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4;
+}
+
+/* State: When at the top (Transparent) */
+.navTransparent {
+  @apply bg-transparent;
+}
+
+/* State: When scrolled down (Solid) */
+.navSolid {
+  @apply bg-primary-brown/95 backdrop-blur-md shadow-lg py-3;
+}
+
+/* Flex Container */
+.container {
+  @apply max-w-7xl mx-auto flex justify-between items-center;
+}
+
+/* Logo */
+.logo {
+  @apply font-heading text-3xl text-primary-cream tracking-wide cursor-pointer select-none;
+}
+
+.logoAccent {
+  @apply text-accent-gold;
+}
+
+/* Desktop Links */
+.desktopMenu {
+  @apply hidden md:flex items-center gap-8;
+}
+
+.navLink {
+  @apply text-primary-cream/80 hover:text-accent-gold font-body text-sm font-semibold tracking-wider uppercase transition-colors cursor-pointer;
+}
+
+/* "Join" Button in Nav */
+.navBtn {
+  @apply bg-accent-rust text-primary-brown px-5 py-2 rounded font-bold text-sm tracking-wide hover:bg-orange-700 transition-colors ml-4;
+}
+
+/* Mobile Toggle Button */
+.mobileToggle {
+  @apply md:hidden text-primary-cream p-1;
+}
+
+/* Mobile Menu Dropdown */
+.mobileMenu {
+  @apply absolute top-full left-0 right-0 bg-primary-brown border-t border-white/10 p-6 flex flex-col gap-6 shadow-2xl md:hidden;
+}
+
+.mobileLink {
+  @apply text-primary-cream text-xl font-heading tracking-wide text-center;
+}

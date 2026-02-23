@@ -1,0 +1,23 @@
+.marqueeContainer {
+  @apply bg-accent-gold text-primary-brown py-4 overflow-hidden relative flex z-20 border-y-4 border-primary-brown;
+}
+
+/* This container holds the two sets of text */
+.track {
+  @apply flex whitespace-nowrap;
+  animation: scroll 20s linear infinite;
+}
+
+.text {
+  @apply font-heading text-4xl md:text-5xl uppercase font-bold tracking-widest px-4;
+}
+
+/* The infinite scroll animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Move half the width (one full set of text) */
+  }
+}

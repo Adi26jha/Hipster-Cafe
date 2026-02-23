@@ -1,0 +1,48 @@
+/* Container */
+.footerContainer {
+  @apply bg-morning-mist text-morning-slate/70 py-16 px-4 border-t border-morning-slate/10 relative overflow-hidden;
+}
+
+.contentWrapper {
+  @apply max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 relative z-10;
+}
+
+/* Columns */
+.columnTitle {
+  @apply font-heading text-2xl text-morning-slate mb-6 tracking-wide;
+}
+
+.textLink {
+  @apply block mb-3 hover:text-alpine-blue transition-colors cursor-pointer text-morning-slate/80;
+}
+
+.text {
+  @apply mb-4 leading-relaxed text-morning-slate/80;
+}
+
+/* Newsletter Input */
+.inputGroup {
+  @apply flex items-center bg-white/60 border border-white/80 rounded overflow-hidden mt-4 shadow-[0_4px_15px_#a2c2e11a];
+}
+
+.input {
+  @apply bg-transparent border-none text-morning-slate px-4 py-3 w-full focus:ring-0 outline-none placeholder-morning-slate/50;
+}
+
+.submitBtn {
+  @apply bg-sunrise-gold text-white px-4 py-3 hover:bg-alpine-blue transition-colors;
+}
+
+/* Social Icons */
+.socialGroup {
+  @apply flex gap-4 mt-4;
+}
+
+.socialIcon {
+  @apply p-2 bg-white/60 border border-white/80 rounded-full hover:bg-alpine-blue hover:text-white transition-all cursor-pointer shadow-[0_4px_10px_#a2c2e11a];
+}
+
+/* Copyright Bar */
+.copyright {
+  @apply border-t border-morning-slate/10 pt-8 text-center text-sm text-morning-slate/60 relative z-10;
+}
