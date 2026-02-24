@@ -7,14 +7,41 @@ const CommunityStories = () => {
   const [stories, setStories] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const fallbackStories = [
+    {
+      id: 1,
+      title: "Finding my co-founder over a cortado",
+      author_name: "Alex R.",
+      content: "I came for the coffee, but stayed for the people. I met my co-founder at the open mic night here. This place has a soul that you just don't find in modern workspaces.",
+      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+      id: 2,
+      title: "The Himalayan Expedition mapping",
+      author_name: "Marcus T.",
+      content: "The Himalayan trip they organized last year changed my life. It's not just a brand, it's a real community. We sat at the corner table for 6 hours mapping out the route.",
+      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+      id: 3,
+      title: "A true sanctuary for creators",
+      author_name: "Priya K.",
+      content: "Most cafes are just workspaces now. Hipster's is different. It feels like a living room where everyone knows your name and actually cares about your creative projects.",
+      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1000&auto=format&fit=crop"
+    }
+  ];
+
   useEffect(() => {
     const fetchStories = async () => {
-      // Fetch 5 to have enough for a nice carousel (we can safely limit to 5)
-      const { data, error } = await supabase.from('stories').select('*').limit(5).order('created_at', { ascending: false });
-      if (data) {
+      try {
+        const { data, error } = await supabase.from('stories').select('*').limit(5).order('created_at', { ascending: false });
+        if (error || !data || data.length === 0) {
+          throw new Error("Trigger Fallback");
+        }
         setStories(data);
-        // If there's only 1 or 2 stories, just center the available ones. 
-        // 5 is ideal for the 3D effect.
+      } catch (err) {
+        console.log("Using fallback stories due to DB timeout or empty result.");
+        setStories(fallbackStories);
       }
     };
     fetchStories();
@@ -84,8 +111,8 @@ const CommunityStories = () => {
                   {/* The Physical Card */}
                   <div
                     className={`w-full h-full rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 relative  ${isActive
-                        ? 'cursor-default ring-1 ring-sunrise-gold/30 shadow-[0_0_40px_rgba(255,179,71,0.15)]'
-                        : 'cursor-pointer hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-colors'
+                      ? 'cursor-default ring-1 ring-sunrise-gold/30 shadow-[0_0_40px_rgba(255,179,71,0.15)]'
+                      : 'cursor-pointer hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-colors'
                       }`}
                     onClick={() => !isActive && setCurrentIndex(index)}
                   >
