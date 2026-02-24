@@ -32,8 +32,19 @@ const CommunityStories = () => {
   ];
 
   useEffect(() => {
-    // Bypass Supabase entirely to guarantee instant flawless rendering
-    setStories(fallbackStories);
+    const fetchStories = async () => {
+      try {
+        const { data, error } = await supabase.from('stories').select('*').limit(5).order('created_at', { ascending: false });
+        if (error || !data || data.length === 0) {
+          throw new Error("Trigger Fallback");
+        }
+        setStories(data);
+      } catch (err) {
+        console.log("Using fallback stories due to DB timeout or empty result.");
+        setStories(fallbackStories);
+      }
+    };
+    fetchStories();
   }, []);
 
   if (stories.length === 0) return null;

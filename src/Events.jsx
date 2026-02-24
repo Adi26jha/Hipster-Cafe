@@ -38,9 +38,23 @@ const Events = () => {
   ];
 
   useEffect(() => {
-    // Bypass Supabase entirely to guarantee instant flawless rendering for the client demo
-    setEvents(fallbackEvents);
-    setLoading(false);
+    const fetchEvents = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('events')
+          .select('*')
+          .order('id', { ascending: true });
+
+        if (error || !data || data.length === 0) throw new Error("Trigger Fallback");
+        setEvents(data);
+      } catch (error) {
+        console.log('Using fallback events due to network timeout or empty DB.');
+        setEvents(fallbackEvents);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchEvents();
   }, []);
 
   return (
