@@ -1,7 +1,10 @@
 [build]
   command = "npm run build"
   publish = "dist"
-  functions = "netlify/functions"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundle = true
 
 [dev]
   command = "npm run dev"
@@ -14,6 +17,7 @@
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/*"
