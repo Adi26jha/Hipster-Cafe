@@ -12,10 +12,10 @@
 
 /* Dark Overlay for Text Readability */
 .overlay {
-  @apply absolute inset-0 bg-black/30;
+  @apply absolute inset-0 bg-primary-cream/30;
 }
 
 /* Optional Center Text */
 .text {
-  @apply relative z-10 font-heading text-5xl md:text-7xl text-white tracking-[0.2em] uppercase text-center opacity-90 drop-shadow-lg;
+  @apply relative z-10 font-heading text-5xl md:text-7xl text-primary-brown tracking-[0.2em] uppercase text-center opacity-90 drop-shadow-lg;
 }

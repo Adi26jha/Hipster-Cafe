@@ -10,6 +10,7 @@ import Home from './Home';
 import Admin from './Admin';
 import Login from './Login'; // <--- New Import
 import UserDashboard from './UserDashboard'; // <--- New Import
+import BeanChat from './BeanChat';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -30,20 +31,25 @@ function App() {
       </AnimatePresence>
 
       {!isLoading && (
-        // 3. The Router wraps the whole application
-        <Router>
-          <Routes>
-            {/* Main Public Website */}
-            <Route path="/" element={<Home />} />
+        <>
+          {/* Global Bean Chatbot */}
+          <BeanChat />
+          
+          {/* 3. The Router wraps the whole application */}
+          <Router>
+            <Routes>
+              {/* Main Public Website */}
+              <Route path="/" element={<Home />} />
 
-            {/* Admin Panel (Owner Only) */}
-            <Route path="/admin" element={<Admin />} />
+              {/* Admin Panel (Owner Only) */}
+              <Route path="/admin" element={<Admin />} />
 
-            {/* User Auth & Profile (Community Features) */}
-            <Route path="/login" element={<Login />} />
-            <Route path="/dashboard" element={<UserDashboard />} />
-          </Routes>
-        </Router>
+              {/* User Auth & Profile (Community Features) */}
+              <Route path="/login" element={<Login />} />
+              <Route path="/dashboard" element={<UserDashboard />} />
+            </Routes>
+          </Router>
+        </>
       )}
     </ModalProvider>
   );

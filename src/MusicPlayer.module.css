@@ -1,10 +1,10 @@
 .playerContainer {
-  @apply fixed bottom-8 left-8 z-40 flex items-center gap-4 bg-black/40 backdrop-blur-md p-3 rounded-full border border-white/10 transition-all duration-300 hover:bg-black/60;
+  @apply fixed bottom-8 left-8 z-40 flex items-center gap-4 bg-primary-cream/40 backdrop-blur-md p-3 rounded-full border border-white/10 transition-all duration-300 hover:bg-primary-cream/60;
 }
 
 /* The Vinyl Disc */
 .disc {
-  @apply w-10 h-10 rounded-full bg-black border-2 border-gray-800 flex items-center justify-center relative overflow-hidden;
+  @apply w-10 h-10 rounded-full bg-primary-cream border-2 border-ui-border flex items-center justify-center relative overflow-hidden;
   background: radial-gradient(circle, #333 30%, #111 100%);
 }
 
@@ -36,5 +36,5 @@
 }
 
 .toggleBtn {
-  @apply text-white hover:text-accent-rust transition-colors;
+  @apply text-primary-brown hover:text-accent-rust transition-colors;
 }
